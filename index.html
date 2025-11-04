@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Didar Ahmed Belal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+      <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+
+    <style>
+
+
+   
+    #toast-container div {
+      transition: all 0.3s ease;
+    }
+
+
+        /* Custom Keyframe Animations (as you defined them) */
+        @keyframes slideRight {
+            0% { transform: translateX(-100px); opacity: 0; }
+            100% { transform: translateX(0%); opacity: 1; }
+        }
+        @keyframes slideLeft {
+            0% { transform: translateX(100px); opacity: 0; }
+            100% { transform: translateX(0%); opacity: 1; }
+        }
+        @keyframes slideTop {
+            0% { transform: translateY(100px); opacity: 0; }
+            100% { transform: translateY(0%); opacity: 1; }
+        }
+        @keyframes slideBottom {
+            0% { transform: translateY(-100px); opacity: 0; }
+            100% { transform: translateY(0%); opacity: 1; }
+        }
+        @keyframes zoomIn {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes floatImage {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-24px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Custom Styles for Interactive Elements */
+        /* Portfolio Overlay Hover Effect */
+        .portfolio-box:hover .portfolio-layer {
+            transform: translateY(0); /* Slides up on hover */
+        }
+        /* Active Navbar Link Style */
+        .navbar a.active {
+            color: #0ef; /* Your cyan-400 color */
+        }
+        /* Mobile Navbar Slide-in Effect */
+        .navbar.active {
+            transform: translateX(0); /* Moves into view */
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-['Poppins']">
+
+    <header class="fixed top-0 left-0 w-full px-4 md:px-10 py-5 bg-transparent flex justify-between items-center z-50 transition-all duration-300 ease-in-out">
+        <a href="#" class="ml-20 text-3xl text-cyan-400 font-semibold cursor-default opacity-0 animate-[slideRight_1.5s_ease_forwards]">Didar</a>
+        <i class='bx bx-menu text-4xl text-cyan-400 lg:hidden cursor-pointer' id="menu-icon"></i>
+
+        <nav class="navbar absolute top-full left-0 w-full bg-gray-800 lg:bg-transparent lg:static lg:w-auto lg:flex lg:justify-between lg:items-center
+                    flex-col lg:flex-row items-center transition-all duration-500 ease-in-out transform -translate-x-full lg:translate-x-0" id="navbar">
+            <a href="#home" class="block lg:inline-block text-lg text-white font-medium my-2 lg:my-0 lg:ml-9 transition-colors duration-300 hover:text-cyan-400 opacity-0 animate-[slideTop_0.5s_ease_forwards] active" style="animation-delay: 0.2s;">Home</a>
+            <a href="#services" class="block lg:inline-block text-lg text-white font-medium my-2 lg:my-0 lg:ml-9 transition-colors duration-300 hover:text-cyan-400 opacity-0 animate-[slideTop_0.5s_ease_forwards]" style="animation-delay: 0.6s;">Services</a>
+            <a href="#portfolio" class="block lg:inline-block text-lg text-white font-medium my-2 lg:my-0 lg:ml-9 transition-colors duration-300 hover:text-cyan-400 opacity-0 animate-[slideTop_0.5s_ease_forwards]" style="animation-delay: 0.8s;">Projects</a>
+            <a href="#about" class="block lg:inline-block text-lg text-white font-medium my-2 lg:my-0 lg:ml-9 transition-colors duration-300 hover:text-cyan-400 opacity-0 animate-[slideTop_0.5s_ease_forwards]" style="animation-delay: 0.4s;">About</a>
+            <a href="#contact" class="block lg:inline-block text-lg text-white font-medium my-2 lg:my-0 lg:ml-9 transition-colors duration-300 hover:text-cyan-400 opacity-0 animate-[slideTop_0.5s_ease_forwards]" style="animation-delay: 1.0s;">Contact</a>
+        </nav>
+    </header>
+
+<section class="home relative w-full min-h-screen flex flex-col-reverse lg:flex-row justify-center items-center px-4 md:px-10 pt-24 lg:pt-0 pb-10 lg:pb-0" id="home">
+    <div class="home-content max-w-xl text-center lg:text-left mt-8 lg:mt-0 lg:mr-10">
+        <h3 class="text-2xl md:text-3xl font-bold text-white opacity-0 animate-[slideBottom_1s_ease_forwards] delay-700">Hello, It's me</h3>
+        <h1 class="text-5xl md:text-6xl font-bold text-white my-[-3px] opacity-0 animate-[slideRight_1s_ease_forwards] delay-1000">Didar Ahmed Belal</h1>
+        <h3 class="text-2xl md:text-3xl font-bold text-white mb-8 opacity-0 animate-[slideTop_1s_ease_forwards] delay-700">And I'm a <span class="multiple-text text-cyan-400"></span></h3>
+
+        <p class="text-sm md:text-base text-white opacity-0 animate-[slideLeft_1s_ease_forwards] delay-1000 leading-relaxed">
+          <!-- <span class="block text-xl md:text-2xl font-semibold text-cyan-400 mb-1">Hi, Didar Ahmed Belal</span>
+          <span class="block text-lg md:text-xl font-medium text-white mb-3">Python Django Backend Developer</span> -->
+          Building robust, scalable web applications and APIs that power modern businesses. Passionate about clean code, performance optimization, and solving complex problems.
+        </p>
+
+        <div class="social-media flex justify-center lg:justify-start mt-8 ml-3">
+            <a href="https://x.com/BelalI38806" target="_blank" class="inline-flex w-10 h-10 bg-transparent border-2 border-cyan-400 rounded-full text-xl text-cyan-400 justify-center items-center mr-4 opacity-0 animate-[slideRight_1s_ease_forwards] delay-1400 hover:bg-cyan-400 hover:text-gray-800 hover:shadow-[0_0_20px_#0ef]">
+                <i class='bx bxl-twitter'></i>
+            </a>
+            <a href="https://www.linkedin.com/in/didar-ahmed-belal/" target="_blank" class="inline-flex w-10 h-10 bg-transparent border-2 border-cyan-400 rounded-full text-xl text-cyan-400 justify-center items-center mr-4 opacity-0 animate-[slideRight_1s_ease_forwards] delay-1600 hover:bg-cyan-400 hover:text-gray-800 hover:shadow-[0_0_20px_#0ef]">
+                <i class='bx bxl-linkedin'></i>
+            </a>
+            <a href="https://github.com/didar-ahmed-belal" target="_blank" class="inline-flex w-10 h-10 bg-transparent border-2 border-cyan-400 rounded-full text-xl text-cyan-400 justify-center items-center mr-4 opacity-0 animate-[slideRight_1s_ease_forwards] delay-1800 hover:bg-cyan-400 hover:text-gray-800 hover:shadow-[0_0_20px_#0ef]">
+                <i class='bx bxl-github'></i>
+            </a>
+        </div>
+
+      <a href="https://drive.google.com/file/d/1Xx_pG5Sks0krR3ilfXu00LkO2KhnTcSZ/view?usp=sharing" 
+            target="_blank" 
+            download 
+            class="btn inline-block px-7 py-3 bg-cyan-400 rounded-full shadow-[0_0_10px_#0ef] text-base text-gray-800 tracking-wider font-semibold opacity-0 animate-[zoomIn_1s_ease_forwards] delay-2000 transition-shadow duration-500 hover:shadow-none mt-8">
+            Download CV
+            </a>
+
+    </div>
+
+    <div class="home-img mt-8 lg:mt-0 lg:ml-10 max-w-xs md:max-w-md">
+        <img src="profile.jpg" alt="Profile Picture" class="rounded-full mx-auto opacity-0 animate-[zoomIn_1s_ease_forwards_2s,_floatImage_4s_ease-in-out_infinite_3s]">
+    </div>
+</section>
+
+
+<section class="services text-beige py-28 bg-gray-700" id="services">
+  <h2 class="heading text-white text-center text-6xl mb-20">
+    Our <span class="text-cyan-400">services</span>
+  </h2>
+
+  <div
+    class="services-container flex justify-center items-center flex-wrap gap-10 px-8 md:px-20 lg:px-32 mx-auto max-w-7xl"
+  >
+    <!-- Software Development -->
+    <div
+      class="services-box flex-1 basis-full sm:basis-80 md:basis-72 bg-gray-800 p-8 rounded-3xl text-center border-2 border-gray-700 transition-transform duration-1000 ease-in-out hover:border-cyan-400 hover:scale-105 mx-4"
+    >
+      <i class="bx bx-code-alt text-6xl text-cyan-400"></i>
+      <h3 class="text-xl text-white mt-4">Software Developer</h3>
+      <p class="text-sm text-white my-4 px-2">
+        Expert in building efficient, maintainable, and scalable software
+        solutions tailored to your business needs.
+      </p>
+      <a
+        href="#"
+        class="btn inline-block px-8 py-2 bg-cyan-400 rounded-full shadow-[0_0_10px_#0ef] text-sm text-gray-800 tracking-wider font-semibold transition-shadow duration-500 hover:shadow-none"
+        >Read More</a
+      >
+    </div>
+
+    <!-- Database Management -->
+    <div
+      class="services-box flex-1 basis-full sm:basis-80 md:basis-72 bg-gray-800 p-8 rounded-3xl text-center border-2 border-gray-700 transition-transform duration-1000 ease-in-out hover:border-cyan-400 hover:scale-105 mx-4"
+    >
+      <i class="bx bx-server text-6xl text-cyan-400"></i>
+      <h3 class="text-xl text-white mt-4">Database Management</h3>
+      <p class="text-sm text-white my-4 px-2">
+        Managing, organizing, and securing your data with expert database design
+        and administration services.
+      </p>
+      <a
+        href="#"
+        class="btn inline-block px-8 py-2 bg-cyan-400 rounded-full shadow-[0_0_10px_#0ef] text-sm text-gray-800 tracking-wider font-semibold transition-shadow duration-500 hover:shadow-none"
+        >Read More</a
+      >
+    </div>
+
+    <!-- Full Stack Development -->
+    <div
+      class="services-box flex-1 basis-full sm:basis-80 md:basis-72 bg-gray-800 p-8 rounded-3xl text-center border-2 border-gray-700 transition-transform duration-1000 ease-in-out hover:border-cyan-400 hover:scale-105 mx-4"
+    >
+      <i class="bx bx-laptop text-6xl text-cyan-400"></i>
+      <h3 class="text-xl text-white mt-4">Full Stack Web Development</h3>
+      <p class="text-sm text-white my-4 px-2">
+        Complete web solutions from frontend to backend using modern
+        technologies and best practices.
+      </p>
+      <a
+        href="#"
+        class="btn inline-block px-8 py-2 bg-cyan-400 rounded-full shadow-[0_0_10px_#0ef] text-sm text-gray-800 tracking-wider font-semibold transition-shadow duration-500 hover:shadow-none"
+        >Read More</a
+      >
+    </div>
+
+    <!-- Backend Optimization -->
+    <div
+      class="services-box flex-1 basis-full sm:basis-80 md:basis-72 bg-gray-800 p-8 rounded-3xl text-center border-2 border-gray-700 transition-transform duration-1000 ease-in-out hover:border-cyan-400 hover:scale-105 mx-4"
+    >
+      <i class="bx bx-data text-6xl text-cyan-400"></i>
+      <h3 class="text-xl text-white mt-4">Backend Performance Optimization</h3>
+      <p class="text-sm text-white my-4 px-2">
+        Boost backend efficiency with query optimization, caching strategies,
+        and faster API responses to handle high-traffic workloads effortlessly.
+      </p>
+      <a
+        href="#"
+        class="btn inline-block px-8 py-2 bg-cyan-400 rounded-full shadow-[0_0_10px_#0ef] text-sm text-gray-800 tracking-wider font-semibold transition-shadow duration-500 hover:shadow-none"
+        >Read More</a
+      >
+    </div>
+
+    <!-- API Development -->
+    <div
+      class="services-box flex-1 basis-full sm:basis-80 md:basis-72 bg-gray-800 p-8 rounded-3xl text-center border-2 border-gray-700 transition-transform duration-1000 ease-in-out hover:border-cyan-400 hover:scale-105 mx-4"
+    >
+      <i class="bx bx-network-chart text-6xl text-cyan-400"></i>
+      <h3 class="text-xl text-white mt-4">API Design & Development</h3>
+      <p class="text-sm text-white my-4 px-2">
+        Building fast, secure, and well-documented RESTful and GraphQL APIs for
+        seamless communication between services and clients.
+      </p>
+      <a
+        href="#"
+        class="btn inline-block px-8 py-2 bg-cyan-400 rounded-full shadow-[0_0_10px_#0ef] text-sm text-gray-800 tracking-wider font-semibold transition-shadow duration-500 hover:shadow-none"
+        >Read More</a
+      >
+    </div>
+
+    <!-- Live Streaming Backend -->
+    <div
+      class="services-box flex-1 basis-full sm:basis-80 md:basis-72 bg-gray-800 p-8 rounded-3xl text-center border-2 border-gray-700 transition-transform duration-1000 ease-in-out hover:border-cyan-400 hover:scale-105 mx-4"
+    >
+      <i class="bx bx-broadcast text-6xl text-cyan-400"></i>
+      <h3 class="text-xl text-white mt-4">Live Streaming Backend</h3>
+      <p class="text-sm text-white my-4 px-2">
+        Design and deploy scalable real-time streaming systems with WebSocket,
+        RTMP, and cloud-based media servers for low-latency communication.
+      </p>
+      <a
+        href="#"
+        class="btn inline-block px-8 py-2 bg-cyan-400 rounded-full shadow-[0_0_10px_#0ef] text-sm text-gray-800 tracking-wider font-semibold transition-shadow duration-500 hover:shadow-none"
+        >Read More</a
+      >
+    </div>
+
+    <!-- Backend Infrastructure -->
+    <div
+      class="services-box flex-1 basis-full sm:basis-80 md:basis-72 bg-gray-800 p-8 rounded-3xl text-center border-2 border-gray-700 transition-transform duration-1000 ease-in-out hover:border-cyan-400 hover:scale-105 mx-4"
+    >
+      <i class="bx bx-cloud text-6xl text-cyan-400"></i>
+      <h3 class="text-xl text-white mt-4">Backend Infrastructure & DevOps</h3>
+      <p class="text-sm text-white my-4 px-2">
+        Cloud deployment, containerization (Docker), CI/CD pipelines, and
+        microservices architecture for smooth backend scalability and
+        maintenance.
+      </p>
+      <a
+        href="#"
+        class="btn inline-block px-8 py-2 bg-cyan-400 rounded-full shadow-[0_0_10px_#0ef] text-sm text-gray-800 tracking-wider font-semibold transition-shadow duration-500 hover:shadow-none"
+        >Read More</a
+      >
+    </div>
+  </div>
+</section>
+
+
+
+<section class="portfolio bg-gray-700 py-24 px-4 md:px-10" id="portfolio">
+  <h2 class="heading text-white text-center text-5xl md:text-6xl mb-16">
+    Latest <span class="text-cyan-400">Project</span>
+  </h2>
+
+  <div class="portfolio-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-10">
+
+    <!-- Skill Bridge -->
+    <div class="portfolio-box relative rounded-3xl shadow-lg shadow-gray-800 overflow-hidden group">
+      <img 
+        src="SkillBridge.png" 
+        alt="SkillBridge Project"
+        class="w-full h-64 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+      >
+      <div class="portfolio-layer absolute inset-0 flex flex-col justify-center items-center bg-gradient-to-t from-gray-900/90 to-cyan-500/60 text-center opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out">
+        <h4 class="text-2xl md:text-3xl font-semibold text-white mb-3">Skill-Bridge</h4>
+        <p class="text-sm md:text-base text-gray-100 mb-6 px-6 leading-relaxed">
+          A freelancing platform where buyers and sellers connect and collaborate on digital services.
+        </p>
+        <a 
+          href="https://skill-bridge-client.vercel.app/" 
+          target="_blank" 
+          class="inline-flex justify-center items-center w-12 h-12 md:w-14 md:h-14 bg-white hover:bg-cyan-400 rounded-full transition-colors duration-300"
+        >
+          <i class='bx bx-link-external text-2xl md:text-3xl text-cyan-500 hover:text-white'></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Jobsy -->
+    <div class="portfolio-box relative rounded-3xl shadow-lg shadow-gray-800 overflow-hidden group">
+      <img 
+        src="Jobsy.png" 
+        alt="Jobsy Project"
+        class="w-full h-64 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+      >
+      <div class="portfolio-layer absolute inset-0 flex flex-col justify-center items-center bg-gradient-to-t from-gray-900/90 to-cyan-500/60 text-center opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out">
+        <h4 class="text-2xl md:text-3xl font-semibold text-white mb-3">Jobsy</h4>
+        <p class="text-sm md:text-base text-gray-100 mb-6 px-6 leading-relaxed">
+          A professional job portal where employers post jobs and job seekers apply with complete profiles.
+        </p>
+        <a 
+          href="https://jobsy-client.vercel.app/" 
+          target="_blank" 
+          class="inline-flex justify-center items-center w-12 h-12 md:w-14 md:h-14 bg-white hover:bg-cyan-400 rounded-full transition-colors duration-300"
+        >
+          <i class='bx bx-link-external text-2xl md:text-3xl text-cyan-500 hover:text-white'></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Wiroko -->
+    <div class="portfolio-box relative rounded-3xl shadow-lg shadow-gray-800 overflow-hidden group">
+      <img 
+        src="Wiroko.png" 
+        alt="Wiroko Project"
+        class="w-full h-64 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+      >
+      <div class="portfolio-layer absolute inset-0 flex flex-col justify-center items-center bg-gradient-to-t from-gray-900/90 to-cyan-500/60 text-center opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out">
+        <h4 class="text-2xl md:text-3xl font-semibold text-white mb-3">Wiroko</h4>
+        <p class="text-sm md:text-base text-gray-100 mb-6 px-6 leading-relaxed">
+          A modern and innovative project built with cutting-edge web technologies.
+        </p>
+        <a 
+          href="https://silver-cocada-b491cb.netlify.app/" 
+          target="_blank" 
+          class="inline-flex justify-center items-center w-12 h-12 md:w-14 md:h-14 bg-white hover:bg-cyan-400 rounded-full transition-colors duration-300"
+        >
+          <i class='bx bx-link-external text-2xl md:text-3xl text-cyan-500 hover:text-white'></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="about flex flex-col lg:flex-row justify-center items-center gap-8 bg-gray-700 py-24 px-4 md:px-10" id="about">
+    <div class="about-img order-2 lg:order-1 text-center w-full">
+        <img src="about.jpg" alt="About Picture" class="w-full h-auto mt-2 mb-0 rounded-[20px]">
+    </div>
+
+    <div class="about-content order-1 lg:order-2 text-center lg:text-left w-full">
+        <h2 class="heading text-center lg:text-left text-5xl md:text-6xl text-white mb-4">About <span class="text-cyan-400">Me</span></h2>
+        <h3 class="text-3xl md:text-4xl text-white mb-4">Backend Developer</h3>
+          <p class="text-base md:text-lg lg:text-xl text-white mb-8 leading-relaxed">
+            A dedicated <span class="text-cyan-400 font-semibold">Python Django Backend Developer</span> 
+            focused on building secure, scalable, and high-performance web applications.  
+            Skilled in developing robust RESTful APIs, optimizing database queries, and integrating backend systems 
+            that ensure smooth and efficient performance.  
+            Passionate about <span class="font-semibold">clean architecture, automation, and problem-solving</span>, 
+            with a continuous drive to learn and implement modern backend technologies.
+          </p>
+        <a href="#" class="btn inline-block px-7 py-3 bg-cyan-400 rounded-full shadow-[0_0_10px_#0ef] text-base text-gray-800 tracking-wider font-semibold transition-shadow duration-500 hover:shadow-none">Read More</a>
+    </div>
+</section>
+
+
+
+<!-- Contact Section -->
+<section class="contact bg-gray-700 py-24 px-4 md:px-10" id="contact">
+  <h2 class="heading text-white text-center text-5xl md:text-6xl mb-16">
+    Contact <span class="text-cyan-400">Me!</span>
+  </h2>
+  
+<form id="contact-form" method="post" class="max-w-4xl mx-auto text-center">
+    <div class="input-box flex justify-between flex-wrap gap-y-6">
+      <input type="text" name="full_name" placeholder="Full Name" required class="w-full md:w-[49%] p-4 text-base text-gray-800 bg-white rounded-xl" />
+      <input type="email" name="email" placeholder="Email Address" required class="w-full md:w-[49%] p-4 text-base text-gray-800 bg-white rounded-xl" />
+    </div>
+
+    <div class="input-box flex justify-between flex-wrap mt-6 gap-y-6">
+      <input type="number" name="phone" placeholder="Mobile Number" class="w-full md:w-[49%] p-4 text-base text-gray-800 bg-white rounded-xl" />
+      <input type="text" name="subject" placeholder="Email Subject" class="w-full md:w-[49%] p-4 text-base text-gray-800 bg-white rounded-xl" />
+    </div>
+
+    <textarea name="message" rows="8" placeholder="Your Message" required class="w-full p-4 text-base text-gray-800 bg-white rounded-xl mt-6 resize-none"></textarea>
+
+    <input type="submit" value="Send Message" id="sendBtn" class="btn inline-block px-7 py-3 bg-cyan-400 rounded-full shadow-[0_0_10px_#0ef] text-base text-gray-800 tracking-wider font-semibold transition-shadow duration-500 hover:shadow-none cursor-pointer mt-6" />
+  </form>
+</section>
+
+<!-- Toast Notifications (optional) -->
+<link rel="stylesheet" href="https://unpkg.com/react-hot-toast/dist/index.css" />
+<div id="toast-container"></div>
+
+
+    <footer class="footer flex flex-col md:flex-row justify-between items-center flex-wrap px-4 py-6 bg-gray-800">
+        <div class="footer-text mb-4 md:mb-0">
+            <p class="text-sm md:text-base text-white text-center md:text-left">Copyright &copy; 2023 by Didar Ahmed Belal. All Rights Reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home" class="inline-flex justify-center items-center p-3 bg-cyan-400 rounded-xl transition-shadow duration-300 hover:shadow-md hover:shadow-cyan-400">
+                <i class='bx bx-up-arrow-alt text-2xl text-gray-800'></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
